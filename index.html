@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Clock</title>
+    <style>
+        body {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 200px;
+
+        }
+
+        .time {
+            padding: 0px 50px;
+            font-size: 3rem;
+        }
+
+        .timeheading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            color: white;
+            margin: 0px 5px;
+
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            background: url("Time_Image.jpg") no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>APNA CLOCK</h1>
+    </div>
+    <div class="main">
+        <div class="timeheading">
+            <div class="time" id="hours"></div><br>
+            HOURS
+        </div>
+        <div class="timeheading">
+            <div class="time" id="minutes"></div><br>
+            MINUTES
+        </div>
+        <div class="timeheading">
+            <div class="time" id="seconds">SECONDS</div><br>
+            SECONDS
+        </div>
+
+
+    </div>
+    <script>
+
+        setInterval(() => {
+            let date = new Date()
+            let h = date.getHours()
+            let m = date.getMinutes()
+            let s = date.getSeconds()
+            document.getElementById("hours").innerHTML = h
+            document.getElementById("minutes").innerHTML = m
+            document.getElementById("seconds").innerHTML = s
+
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
